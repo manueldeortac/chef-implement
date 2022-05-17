@@ -14,6 +14,9 @@ En Chef, los nodos se actualizan dinámicamente con las configuraciones en el se
 
 ## Características de Chef
 
+
+
+
 - Chef es compatible con múltiples plataformas como AIX, RHEL / CentOS, FreeBSD, OS X, Solaris, Microsoft Windows y Ubuntu. Las plataformas de cliente adicionales incluyen Arch Linux, Debian y Fedora.
 - Chef puede integrarse con plataformas basadas en la nube como Internap, Amazon EC2, Google Cloud Platform, OpenStack, SoftLayer, Microsoft Azure y Rackspace para aprovisionar y configurar automáticamente nuevas máquinas.
 - Debido a la madurez y flexibilidad de Chef, está siendo utilizado por gigantes como Mozilla, Expedia, Facebook, HP Public Cloud, Prezi, Xero, [Ancestry.com](https://ancestry.com/), Rackspace, Get Satisfaction, IGN, Marshall University, Socrata, University of Minnesota, Wharton School de la Universidad de Pennsylvania, Bonobos, Splunk, Citi, DueDil, Disney y Cheezburger
