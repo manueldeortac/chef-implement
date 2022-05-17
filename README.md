@@ -1,6 +1,6 @@
 # CHEF
 
-![logo Chef](/assets/img/Chef-logo1.png)
+![logo Chef](assets/img/Chef-logo1.png)
 
 ## ¿Qué es?
 
@@ -24,6 +24,8 @@ En la fase de implementación se puede desarrollar 3 puntos que son importantes:
 
 - _ **Puesto de Trabajo:** _
 
+![logo Chef](assets/img/imagen1.jpg)
+
 La estación de trabajo es la ubicación desde la que se realizan todas las configuraciones de Chef.gestionado. Esta máquina contiene todos los datos de configuración que luego se pueden enviar al servidor Chef central. Estas configuraciones se prueban en la estación de trabajo antes de insertarlas en Chef Server. Una estación de trabajo consta de una herramienta de línea de comandos llamada Cuchillo, que se utiliza para interactuar con Chef Server. Puede haber varias estaciones de trabajo que administran juntas el servidor Chef central.
 
 - _ **Servidor:** _
@@ -31,6 +33,9 @@ La estación de trabajo es la ubicación desde la que se realizan todas las conf
 Actúa como un centro para los datos de configuración. Chef Server almacena los libros de recetas, las políticas que se aplican a los nodos y los metadatos que describen cada nodo registrado que está siendo administrado por Chef-Client.
 
 Los nodos usan Chef-Client para pedirle al Chef Server detalles de configuración, como recetas, plantillas y distribuciones de archivos. El Chef-Client luego hace la mayor parte del trabajo de configuración posible en los propios Nodos (y no en el Chef Server).
+
+![logo Chef](assets/img/imagen2.jpg)
+
 
 - _ **Nodos:** _
 
@@ -64,14 +69,14 @@ Vaya a la terminal de su estación de trabajo y descargue Chef DK usando el coma
 
 _ **Ejecuta esto:** _
 
-wget https://packages.chef.io/stable/el/6/chefdk-1.0.3-1.el6.x86\_64.rpm
-
+`wget https://packages.chef.io/stable/el/6/chefdk-1.0.3-1.el6.x86\_64.rpm
+`
 El paquete ahora está descargado. Es hora de instalar este paquete usando rpm.
 
 _ **Ejecuta esto:** _
 
-rpm -ivh chefdk-1.0.3-1.el6.x86\_64.rpm
-
+`rpm -ivh chefdk-1.0.3-1.el6.x86\_64.rpm
+`
 Chef DK ahora está instalado en mi estación de trabajo.
 
 - **Paso 2** : Cree una receta en la estación de trabajo
@@ -80,8 +85,8 @@ Comencemos por crear una receta en la estación de trabajo y probarla localmente
 
 _ **Ejecuta esto:** _
 
-mkdir chef-repo cd chef-repo
-
+`mkdir chef-repo cd chef-repo
+`
 En este directorio chef-repo, crearé una receta llamada edureka.rb. .rb es la extensión utilizada para ruby. Usaré el editor vim, puedes usar cualquier otro editor que quieras como gedit, emac, vi, etc.
 
 _ **Ejecuta esto:** _
@@ -90,8 +95,8 @@ vim edureka.rb
 
 _ **Aquí agregue lo siguiente:** _
 
-archivo &#39;/ etc / motd&#39; contenido &#39;Bienvenido a Chef&#39; final
-
+`archivo &#39;/ etc / motd&#39; contenido &#39;Bienvenido a Chef&#39; final
+`
 Esta rreceta es dureka .rb crea un archivo llamado / etc / motd con el contenido &#39;Bienvenido a Chef&#39;.
 
 C ++ Stl Sort
@@ -100,8 +105,8 @@ Ahora usaré esta receta para verificar si está funcionando.
 
 _ **Ejecutar esta:** _
 
-chef-aplicar edureka.rb
-
+`chef-aplicar edureka.rb
+`
 Entonces, hay un archivo creado en el repositorio de chef que tiene contenido Bienvenido a Chef.
 
 - **Paso 3:** METRO modificar el archivo de receta para instalar el paquete httpd
@@ -110,7 +115,7 @@ Modificaré la receta para instalar el paquete httpd en mi estación de trabajo 
 
 _ **Ejecutar esta:** _
 
-vim edureka.rb
+``vim edureka.rb``
 
 _ **Aquí agregue lo siguiente:** _
 
@@ -120,8 +125,8 @@ Ahora aplicaré estas configuraciones ejecutando el siguiente comando:
 
 _ **Ejecutar esta:** _
 
-chef-aplicar edureka.rb
-
+``chef-aplicar edureka.rb
+``
 La ejecución del comando describe claramente cada instancia en la receta. Instala el paquete Apache, habilita e inicia el servicio httpd en la estación de trabajo. Y crea un archivo index.html en la raíz del documento predeterminado con el contenido &#39;Bienvenido a Apache en Chef&#39;.
 
 Ahora confirme la instalación de Apache2 abriendo su navegador web. Escriba su dirección IP pública o el nombre de su anfitrión. En mi caso, es localhost.
@@ -140,7 +145,8 @@ Pasemos a este nuevo directorio httpd\_deploy.
 
 _ **Ejecutar esta:** _
 
-cd httpd\_deploy
+`cd httpd\_deploy
+`
 
 Ahora veamos la estructura de archivos del libro de recetas creado.
 
@@ -162,14 +168,14 @@ Ir al directorio predeterminado
 
 _ **Ejecutar esta:** _
 
-cd / root / chef-repo / cookbook / httpd\_deploy / templates / default
-
+`cd / root / chef-repo / cookbook / httpd\_deploy / templates / default
+`
 Aquí, edite la plantilla index.html.erb usando cualquier editor con el que se sienta cómodo. Usaré el editor vim.
 
 _ **Ejecutar esta:** _
 
-vim index.html.erb
-
+`vim index.html.erb
+`
 Ahora agregue lo siguiente:
 
 Bienvenido a Chef Apache Deployment
@@ -180,13 +186,13 @@ Vaya al directorio de recetas.
 
 _ **Ejecutar esta:** _
 
-cd / root / chef-repo / cookbooks / httpd\_deploy / recipes
-
+`cd / root / chef-repo / cookbooks / httpd\_deploy / recipes
+`
 Ahora edite el archivo default.rb usando cualquier editor que desee. Usaré el editor vim.
 
 _ **Ejecutar esta:** _
 
-vim default.rb
+`vim default.rb`
 
 Aquí agregue lo siguiente:
 
@@ -196,7 +202,7 @@ Ahora volveré a mi carpeta chef-repo y ejecutaré / probaré mi receta en mi es
 
 _ **Ejecutar esta:** _
 
-cd / root / chef-repo chef-client --local-mode --runlist &#39;receta [httpd\_deploy]&#39;
+`cd /root/chef-repo chef-client --local-mode --runlist &#39;receta [httpd\_deploy]&#39;`
 
 De acuerdo con mi receta, Apache está instalado en mi estación de trabajo, el servicio se está iniciando y habilitando al arrancar. También se ha creado un archivo de plantilla en la raíz de mi documento predeterminado.
 
@@ -220,13 +226,13 @@ Mueva este archivo a su directorio raíz.Ahora descomprima este archivo zip usan
 
 _ **Ejecutar esta:** _
 
-descomprimir chef-starter.zip
+`unzip chef-starter.zip`
 
 Ahora mueva este kit de inicio al directorio de libros de cocina en el directorio chef-repo.
 
 _ **Ejecutar esta:** _
 
-mv starter / root / chef-repo / cookbook
+`mv starter/root/chef-repo/cookbook`
 
 Los libros de cocina del chef están disponibles en el Supermercado de libros de cocina, podemos ir al Supermercado del chef. Descargue los libros de cocina necesarios de supermarket.chef.io . Estoy descargando uno de los libros de cocina para instalar Apache desde allí.
 
@@ -236,13 +242,13 @@ cd chef-repo cuchillo libro de cocina descarga del sitio learn\_chef\_httpd
 
 Hay Tar ball descargado para Apache Cookbook. Ahora, necesitamos extraer el contenido de este archivo Tar descargado. Para eso, usaré el comando tar.
 
-tar -xvf learn\_chef\_httpd-0.2.0.tar.gz
+`tar -xvf learn\_chef\_httpd-0.2.0.tar.gz`
 
 Todos los archivos necesarios se crean automáticamente en este Libro de recetas. No es necesario realizar modificaciones. Revisemos la descripción de la receta dentro de mi carpeta de recetas.
 
 _ **Ejecutar esta:** _
 
-cd / root / chef-repo / learn\_chef\_httpd / recipes cat default.rb
+`cd /root/chef-repo/ learn\_chef\_httpd/recipes cat default.rb`
 
 Ahora, simplemente cargaré este libro de cocina en mi Chef Server, ya que me parece perfecto.
 
@@ -252,8 +258,8 @@ Para cargar el libro de cocina de Apache que he descargado, primero mueva este a
 
 _ **Ejecutar esta:** _
 
-mv / root / chef-repo / learn\_chef\_httpd / root / chef-repo / cookbooks
-
+`mv/root/chef-repo/learn\_chef\_httpd/root/chef-repo/cookbooks
+`
 Ahora vaya a este directorio de libros de cocina.
 
 _ **Ejecutar esta:** _
@@ -278,7 +284,7 @@ Solo necesito la dirección IP de mi nodo para eso ejecutaré el siguiente coman
 
 Ejecutivo tu t es t h es:
 
-ifconfig
+`ifconfig`
 
 Agregaré mi nodo Chef al servidor ejecutando el comando Knife Bootstrap en el que especificaré la dirección IP del nodo Chef y su nombre. Ejecute el comando que se muestra a continuación.en:
 
