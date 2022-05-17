@@ -26,7 +26,7 @@ En la fase de implementación se puede desarrollar 3 puntos que son importantes:
 
 ![Image 1](assets/img/Image1.jpg)
 
-La estación de trabajo es la ubicación desde la que se realizan todas las configuraciones de Chef.gestionado. Esta máquina contiene todos los datos de configuración que luego se pueden enviar al servidor Chef central. Estas configuraciones se prueban en la estación de trabajo antes de insertarlas en Chef Server. Una estación de trabajo consta de una herramienta de línea de comandos llamada Cuchillo, que se utiliza para interactuar con Chef Server. Puede haber varias estaciones de trabajo que administran juntas el servidor Chef central.
+La estación de trabajo es la ubicación desde la que se realizan todas las configuraciones de Chef.gestionado. Esta máquina contiene todos los datos de configuración que luego se pueden enviar al servidor Chef central. Estas configuraciones se prueban en la estación de trabajo antes de insertarlas en Chef Server. Una estación de trabajo consta de una herramienta de línea de comandos llamada knife, que se utiliza para interactuar con Chef Server. Puede haber varias estaciones de trabajo que administran juntas el servidor Chef central.
 
 - _ **Servidor:** _
 
@@ -238,7 +238,7 @@ Los libros de cocina del chef están disponibles en el Supermercado de libros de
 
 _ **Ejecutar esta:** _
 
-cd chef-repo cuchillo libro de cocina descarga del sitio learn\_chef\_httpd
+cd chef-repo knife libro de cocina descarga del sitio learn\_chef\_httpd
 
 Hay Tar ball descargado para Apache Cookbook. Ahora, necesitamos extraer el contenido de este archivo Tar descargado. Para eso, usaré el comando tar.
 
@@ -270,7 +270,7 @@ Ahora en este directorio, ejecute el siguiente comando para cargar Apache Cookbo
 
 Ejecutivo ute t h es:
 
-cargar libro de cocina con cuchillo learn\_chef\_httpd
+cargar libro de cocina con knife learn\_chef\_httpd
 
 Verifique el libro de recetas desde la consola de administración del servidor Chef. En la sección de políticas, encontrará el libro de cocina que ha subido. Consulte la captura de pantalla a continuación:
 
@@ -292,13 +292,13 @@ Ejecutivo ute t h es:
 
 Cómo Instalar Php En Windows 10
 
-cuchillo bootstrap 192.168.56.102 --ssh-usuario root --ssh-contraseña edureka --nombre de nodo chefNode
+knife bootstrap 192.168.56.102 --ssh-usuario root --ssh-contraseña edureka --nombre de nodo chefNode
 
-Este comando también inicializará la instalación del Chef-Client en el Chef Node. Puede verificarlo desde la CLI en la estación de trabajo usando el comando cuchillo, como se muestra a continuación.en:
+Este comando también inicializará la instalación del Chef-Client en el Chef Node. Puede verificarlo desde la CLI en la estación de trabajo usando el comando knife, como se muestra a continuación.en:
 
 Ejecutivo ute t h es:
 
-Lista de nodos de cuchillo
+Lista de nodos de knife
 
 También puede verificar desde el servidor Chef. Vaya a la pestaña de nodos en su Consola de administración del servidor, aquí notará que el nodo que ha agregado está presente. Consulte la captura de pantalla a continuación.
 
