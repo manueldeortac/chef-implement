@@ -1,5 +1,7 @@
 # CHEF
 
+![logo Chef](/assets/img/Chef-logo1.png)
+
 ## ¿Qué es?
 
 Es una herramienta de gestión de la configuración de código abierto que puede utilizar para crear partes de una infraestructura como un servicio (IaaS), que automatiza el proceso de entrega de aplicaciones. Chef es una plataforma de automatización simple y poderosa que transforma la infraestructura en código. Puede utilizar scripts Chef para suministrar una instalación de IBM® Integration Bus.
