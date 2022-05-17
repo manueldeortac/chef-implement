@@ -24,7 +24,7 @@ En la fase de implementación se puede desarrollar 3 puntos que son importantes:
 
 - _ **Puesto de Trabajo:** _
 
-![logo Chef](assets/img/imagen1.jpg)
+![Image 1](assets/img/imagen1.jpg)
 
 La estación de trabajo es la ubicación desde la que se realizan todas las configuraciones de Chef.gestionado. Esta máquina contiene todos los datos de configuración que luego se pueden enviar al servidor Chef central. Estas configuraciones se prueban en la estación de trabajo antes de insertarlas en Chef Server. Una estación de trabajo consta de una herramienta de línea de comandos llamada Cuchillo, que se utiliza para interactuar con Chef Server. Puede haber varias estaciones de trabajo que administran juntas el servidor Chef central.
 
@@ -34,7 +34,7 @@ Actúa como un centro para los datos de configuración. Chef Server almacena los
 
 Los nodos usan Chef-Client para pedirle al Chef Server detalles de configuración, como recetas, plantillas y distribuciones de archivos. El Chef-Client luego hace la mayor parte del trabajo de configuración posible en los propios Nodos (y no en el Chef Server).
 
-![logo Chef](assets/img/imagen2.jpg)
+![Image 2](assets/img/imagen2.jpg)
 
 
 - _ **Nodos:** _
